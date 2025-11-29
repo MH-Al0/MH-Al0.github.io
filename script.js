@@ -26,3 +26,24 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Selec tout
+const content = document.querySelector('body');
+
+window.addEventListener('scroll', () => {
+    const scrollAmount = window.scrollY; // vert (Y)
+
+    // Maths (ew)
+    const rotateX = Math.sin(scrollAmount / 50) * 2; // rotation X de -2 à 2 degrés
+    const rotateY = Math.sin(scrollAmount / 30) * 2; // rotation Y de -2 à 2 degrés
+    const translateX = Math.sin(scrollAmount / 25) * 5; // décalage horizontal de -5 à 5px
+    const translateY = Math.sin(scrollAmount / 20) * 5; // décalage vertical de -5 à 5px
+
+    // Transfo
+    content.style.transform = `
+        rotateX(${rotateX}deg)
+        rotateY(${rotateY}deg)
+        translateX(${translateX}px)
+        translateY(${translateY}px)
+    `;
+});
