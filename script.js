@@ -1,4 +1,4 @@
-// Smooth scrolling for nav links
+// Smooth scroll for nav
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -7,7 +7,7 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Optional: highlight nav on scroll
+// optional highlight on scroll
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav a');
 
