@@ -12,6 +12,8 @@ HTML
 
 CSS
 
+JS
+
 #### Website :
 
 -> https://MH-Al0.github.io
