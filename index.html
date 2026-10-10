@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Cz/dfbw4fjK5UGoeMl5yIvG50ase1xv9NntkKVVGg7w='; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed H. | Portfolio</title>
+<meta name="description" content="Portfolio de Mohamed H., étudiant en informatique : administration Linux, cryptanalyse, simulation et Java.">
+<meta name="theme-color" content="#F4F6F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161C24" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mohamed H. | Portfolio">
+<meta property="og:description" content="Portfolio de Mohamed H., étudiant en informatique : administration Linux, cryptanalyse, simulation et Java.">
+<meta property="og:url" content="https://mh-al0.github.io/">
+<link rel="alternate" hreflang="fr" href="https://mh-al0.github.io/">
+<link rel="alternate" hreflang="en" href="https://mh-al0.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://mh-al0.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script>
+(function () {
+    var root = document.documentElement;
+    var dark = matchMedia('(prefers-color-scheme: dark)');
+    var calm = matchMedia('(prefers-reduced-motion: reduce)');
+    try { var saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+    function isDark() { return root.dataset.theme ? root.dataset.theme === 'dark' : dark.matches; }
+    function sync() {
+        var button = document.querySelector('[data-js="theme-toggle"]');
+        if (button) { button.setAttribute('aria-pressed', isDark()); button.hidden = false; }
+    }
+    function flip() {
+        root.dataset.theme = isDark() ? 'light' : 'dark';
+        try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+        sync();
+    }
+    document.addEventListener('click', function (event) {
+        if (!event.target.closest('[data-js="theme-toggle"]')) return;
+        if (document.startViewTransition && !calm.matches) document.startViewTransition(flip);
+        else flip();
+    });
+    document.addEventListener('DOMContentLoaded', sync);
+    dark.addEventListener('change', sync);
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="site-header">
+    <div class="header-inner wrap">
+        <a class="logo" href="./">M<span class="dot">.</span>H</a>
+        <nav aria-label="Principal">
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="tools">
+            <a class="control" href="en/" hreflang="en" lang="en">English</a>
+            <button class="control" type="button" data-js="theme-toggle" aria-pressed="false" hidden>Thème sombre</button>
+        </div>
+    </div>
+</header>
+<main id="main" tabindex="-1">
+    <section class="hero wrap">
+        <h1>Mohamed H<span class="dot">.</span></h1>
+        <p class="tagline">Développeur &amp; Explorateur de Systèmes</p>
+    </section>
+
+    <section class="section wrap" id="about">
+        <h2>À propos</h2>
+        <p>Étudiant en informatique, spécialisé dans l'administration système et l'innovation technique. Je travaille avec rigueur scientifique et je cherche des solutions logicielles créatives.</p>
+    </section>
+
+    <section class="section wrap" id="projects">
+        <h2>Projets</h2>
+        <ol class="timeline">
+            <li class="entry">
+                <time datetime="2025-12">déc. 2025</time>
+                <div>
+                    <h3><a href="https://github.com/MH-Al0/WardenHeart">WardenHeart</a></h3>
+                    <p>Module serveur Java de récompenses dynamiques avec gestion d'événements temps réel et config YAML.</p>
+                    <p class="tags">Java, Minecraft (Paper)</p>
+                </div>
+            </li>
+            <li class="entry">
+                <time datetime="2025-10">oct. 2025</time>
+                <div>
+                    <h3><a href="https://github.com/MH-Al0/rocket-trajectory-sim">Rocket Sim</a></h3>
+                    <p>Simulateur de trajectoire basé sur NumPy/SciPy intégrant traînée atmosphérique et poussée variable.</p>
+                    <p class="tags">Physique, Python</p>
+                </div>
+            </li>
+            <li class="entry">
+                <time datetime="2025-09">sept. 2025</time>
+                <div>
+                    <h3><a href="https://github.com/Ayoo-23/xor-bruteforcer">XOR Brute-Forcer</a></h3>
+                    <p>Outil de cryptanalyse utilisant le beam search et le scoring fréquentiel pour casser des chiffrements XOR.</p>
+                    <p class="tags">Python, Cryptographie</p>
+                </div>
+            </li>
+            <li class="entry">
+                <time datetime="2024">2024</time>
+                <div>
+                    <h3>Serveur Maison</h3>
+                    <p>Migration d'un hardware de 2011 vers une architecture Arch Linux optimisée pour le self-hosting.</p>
+                    <p class="tags">Linux, Réseaux</p>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <section class="section wrap" id="skills">
+        <h2>Compétences</h2>
+        <ul class="skills">
+            <li>Python, JS, Java</li>
+            <li>Administration Linux</li>
+            <li>Résolution de problèmes</li>
+        </ul>
+        <p>Langues&nbsp;: français, anglais, arabe</p>
+    </section>
+</main>
+<footer class="section wrap" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-block">
+        <p class="lead">Prêt à collaborer&nbsp;?</p>
+        <p class="contact-links"><a href="mailto:MohamedH.Pro@mail.com">MohamedH.Pro@mail.com</a> <a href="https://github.com/MH-Al0">GitHub</a></p>
+        <p class="quote">&laquo;&nbsp;La connaissance n'a aucune valeur si vous ne la mettez pas en pratique.&nbsp;&raquo;</p>
+    </div>
+</footer>
+</body>
+</html>
